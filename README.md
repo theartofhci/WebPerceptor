@@ -14,7 +14,9 @@ Please read `license.md`, `legal_notice.md`, and `responsible_use.md` before usi
 A set of non-technical installation instructions (and walkthrough video) 
 
 ### Prerequisites
-A Chromimum browser is required for use.
+A Chromimum browser is required for use. 
+
+To use the WebPercetor's cloud-based LLM functionality requires an account, API key, and credit with an LLM provider, e.g. OpenAI, xAI, etc. 
 
 To use the WebPerceptor's local LLM functionality requires:
 * ``npm``
@@ -33,6 +35,14 @@ chrome://extensions/
 3. Enable **Developer Mode**
 4. Click **"load unpacked"** and select the folder which contains the ``manifest.json``
 5. *(Optional: If you want to use the plugin with a local LLM)* In the ``main`` project folder run ``npm install``
+
+
+### Cloud-Based LLM Setup
+Coming soon...
+
+
+### Local LLM Setup
+Coming soon...
 
 
 # Getting Started (Guided Walkthrough)
