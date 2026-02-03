@@ -4,12 +4,6 @@ The WebPerceptor is a client-side Chromium plugin which, for any web page, ident
 The WebPerceptor is designed to enable the automatic, personalised, in-line, real-time remixing of web browsing, allowing users to browse a client-side, user-controlled "AI Mediated Web". 
 
 
-# Built With
-- HTML, CSS, and JavaScript
-- Ollama and Nodejs (local LLM support) 
-- Geese (soundtrack) 
-- Pizza and Irn-Bru ZERO
-
 # Getting Started 
 This section is intended for developers and individuals with some experience using custom Chromium plugins and code. 
 
@@ -47,3 +41,10 @@ Coming soon...
 
 # Functionality and Usage 
 An overview of the functionality and usage coming soon...
+
+
+# Built With
+- HTML, CSS, and JavaScript
+- Ollama and Nodejs (local LLM support) 
+- Geese (soundtrack) 
+- Pizza and Irn-Bru ZERO
