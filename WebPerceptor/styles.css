@@ -1,0 +1,519 @@
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2, h3, h4 {
+      color: #0f172a;
+    }
+
+    input, textarea, button {
+      font-family: inherit;
+      font-size: 14px;
+      padding: 6px 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+    }
+
+    input[type="checkbox"] {
+      transform: scale(1.2);
+      margin-right: 6px;
+    }
+
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 14px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    textarea {
+      width: 100%;
+      resize: vertical;
+      height: 100px;
+    }
+
+    .accordion {
+      background-color: #fff;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    .accordion-header {
+      cursor: pointer;
+      padding: 14px 16px;
+      font-weight: 600;
+      font-size: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f1f5f9;
+      border-bottom: 1px solid #e2e8f0;
+      transition: background 0.2s;
+    }
+
+    .accordion-header:hover {
+      background: #e2e8f0;
+    }
+
+    .accordion-content {
+      padding: 16px;
+      display: none;
+      background: white;
+    }
+
+    .accordion-content.active {
+      display: block;
+    }
+
+    .chevron {
+      transition: transform 0.3s;
+    }
+    .chevron.rotate {
+      transform: rotate(90deg);
+    }
+
+    .tag-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .switch {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #f8fafc;
+      padding: 6px 10px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .slider {
+      width: 40px;
+      height: 20px;
+      background-color: #cbd5e1;
+      border-radius: 20px;
+      position: relative;
+      transition: 0.4s;
+    }
+    .slider:before {
+      content: "";
+      position: absolute;
+      height: 16px;
+      width: 16px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      border-radius: 50%;
+      transition: 0.4s;
+    }
+    .switch input { display: none; }
+    .switch input:checked + .slider {
+      background-color: #4caf50;
+    }
+    .switch input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+
+    #unsavedNotice {
+      color: #dc2626;
+      font-weight: 600;
+      margin-top: 5px;
+    }
+
+    #modificationNotice {
+      color: #58f31a;
+      font-weight: 600;
+      margin-top: 5px;
+    }
+
+#localLLMSwitch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+  /* width: 100%;               makes gray bar extend full width of parent */
+  background: #f0f0f0;
+  padding: 5px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
+  /* box-sizing: border-box;    ensures padding doesn’t shrink it */
+}
+
+#localLLMSwitch .slider {
+  flex-shrink: 0;
+  width: 50px;               /* same as others for consistency */
+  height: 24px;
+  background-color: #ccc;
+  border-radius: 24px;
+  position: relative;
+  transition: 0.4s;
+}
+
+/* keep the moving toggle circle correct */
+#localLLMSwitch .slider:before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+#localLLMSwitch input:checked + .slider {
+  background-color: #4caf50;
+}
+
+#localLLMSwitch input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+
+.input-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.input-row label {
+  width: 120px; /* fixed label width for alignment */
+  font-size: 14px;
+}
+
+.input-row input {
+  flex: 1;
+  max-width: 300px;
+}
+
+/* Save section layout */
+.save-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  background: #f1f5f9;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+/* Save section layout */
+.setup-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  background: #f1f5f9;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+/* Modern save button */
+#save {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(37, 99, 235, 0.2);
+  transition: all 0.2s ease;
+}
+#save:hover {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  transform: translateY(-1px);
+}
+
+/* Unsaved notice styling */
+#unsavedNotice {
+  color: #dc2626;
+  font-weight: 600;
+  font-size: 14px;
+  background: #fee2e2;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #fecaca;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  animation: pulseNotice 1.2s infinite alternate;
+}
+
+/* subtle pulsing effect */
+@keyframes pulseNotice {
+  0% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+
+#llmOnlineActiveModelNotice {
+  color: #fffffffe;
+  font-weight: 600;
+  font-size: 14px;
+  background: #190072;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #190072;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  animation: pulseNotice 1.2s infinite alternate;
+}
+
+
+#llmOfflineActiveModelNotice {
+  color: #fffffffe;
+  font-weight: 600;
+  font-size: 14px;
+  background: #00720a;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #00720a;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  animation: pulseNotice 1.2s infinite alternate;
+}
+
+
+#setupModificationNotice {
+  color: #fffffffe;
+  font-weight: 600;
+  font-size: 14px;
+  background: #000000;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #000000;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  animation: pulseNotice 1.2s infinite alternate;
+}
+
+#noModificationNotice {
+  color: #fffffffe;
+  font-weight: 600;
+  font-size: 14px;
+  background: #000000;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #000000;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  animation: pulseNotice 1.2s infinite alternate;
+}
+
+#rewriteAndReplaceNotice {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  background: #2d5202;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #000000;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  animation: pulseNotice 1.2s infinite alternate;
+}
+
+#appendNotice {
+  color: #fffffffe;
+  font-weight: 600;
+  font-size: 14px;
+  background: #aa05b9;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #000000;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  animation: pulseNotice 1.2s infinite alternate;
+}
+
+
+
+
+
+
+.section-label {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: #334155;
+}
+
+
+
+
+.segmented-control {
+  display: flex;
+  gap: 8px;           /* space between options */
+  user-select: none;   /* prevent text selection */
+}
+
+.segmented-control input {
+  display: none;       /* hide the native checkbox */
+}
+
+.segmented-control label {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #f0f0f0;       /* default gray */
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;        /* prevent wrapping */
+  font-size: 14px;
+}
+
+/* When checked, green background + white text */
+.segmented-control input:checked + label {
+  background: #4caf50;
+  color: white;
+  border-color: #4caf50;
+}
+
+/* Hover effect for nicer UI */
+.segmented-control label:hover {
+  background: #e0e0e0;
+}
+
+
+
+
+.card-toggle {
+  display: inline-block;
+}
+
+.card-toggle input {
+  display: none; /* hide the native checkbox */
+}
+
+.card-toggle .card {
+  display: inline-block;
+  padding: 14px 20px;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+  user-select: none;
+}
+
+.card-toggle input:checked + .card {
+  background-color: #4caf50;
+  color: white;
+  border-color: #4caf50;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card-toggle .card:hover {
+  background-color: #e2e8f0;
+}
+
+
+.accordion-content p {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px 14px;
+  line-height: 1.6;
+  color: #334155;
+  font-size: 14px;
+  margin-bottom: 14px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+
+.accordion-content p code {
+  background: #e2e8f0;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-family: "Fira Code", monospace;
+  font-size: 13px;
+  color: #1e293b;
+}
+
+
+.accordion-content ul.example-list {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin: 10px 0 14px;
+  line-height: 1.6;
+  color: #334155;
+  list-style-type: disc;
+  padding-left: 28px;
+}
+
+.accordion-content ul.example-list li {
+  margin-bottom: 6px;
+}
+
+.accordion-content ul.example-list code {
+  background: #e2e8f0;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-family: "Fira Code", monospace;
+  font-size: 13px;
+  color: #1e293b;
+}
+
+/* unified info box */
+.info-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 14px;
+  line-height: 1.6;
+  color: #334155;
+  font-size: 14px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+
+/* inline code styling */
+.info-box code {
+  background: #e2e8f0;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-family: "Fira Code", monospace;
+  font-size: 13px;
+  color: #1e293b;
+}
+
+/* example list inside info box */
+.info-box .example-list {
+  margin: 8px 0 0 18px;
+  list-style-type: disc;
+}
+
+.info-box .example-list li {
+  margin-bottom: 4px;
+}
+
+
+#excludedUrls {
+  width: 100%;           /* makes it fill the container */
+  max-width: 1200px;      /* optional: sets a max width */
+  height: 120px;         /* optional: controls height */
+  padding: 8px 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 14px;
+  resize: vertical;      /* user can resize only vertically */
+  box-sizing: border-box; /* includes padding/border in width */
+}

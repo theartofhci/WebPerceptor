@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WebPerceptor Settings</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- <h2>Web Rewriter Settings</h2> -->
+
+  <!-- <button id="save">Save</button>
+  <p id="unsavedNotice" style="display:none;">You have unsaved changes!</p> -->
+
+  <!-- <div class="setup-bar">  
+    <span id="setupModificationNotice" style="display:block;"> Modication:</span>
+    <span id="noModificationNotice" style="display:block;"> No Modification</span>
+    <span id="rewriteAndReplaceNotice" style="display:none;">Rewrite & Replace</span>
+    <span id="appendNotice" style="display:none;">Append</span>  
+  </div> -->
+
+<!-- 
+  <div class="save-bar">
+    <button id="save">Save Changes</button>
+    <span id="unsavedNotice" style="display:none;">Unsaved changes</span>
+  </div> -->
+
+
+  <div class="accordion">
+  
+    <div class="accordion-header">
+      <span>Modification Setup</span>
+          <span id="noModificationNotice" style="display:block;"> No Modification</span>
+          <span id="rewriteAndReplaceNotice" style="display:none;">Rewrite & Replace</span>
+          <span id="appendNotice" style="display:none;">Append</span>  
+      <span class="chevron rotate">▶</span>
+    </div>
+    
+    <div class="accordion-content active">
+      <!-- <p>
+        This is the revised version of the content modification setup. I'll fix the text that's here at some point.
+      </p> -->
+      
+      <!-- Content Mode Selection -->
+      <!-- <label for="modeSelect" class="section-label">++++++ TODO TEXT HERE ++++++:</label><br><br> -->
+      <select id="modeSelect" style="width: 100%; padding: 6px 10px; margin-bottom: 12px;">
+        <option value="">-- Select Mode --</option>
+        <option value="append">Append</option>
+        <option value="rewrite">Rewrite and Replace</option>        
+        <option value="rewriteAdvanced">Rewrite and Replace (Advanced)</option>        
+      </select>
+
+       <!-- <p>
+        This is the revised version of the content modification setup. I'll fix the text that's here at some point.
+      </p> -->
+
+      <!-- Rewrite and Replace Content -->
+      <div class="mode-options" id="rewriteOptions" style="display: none;">
+        
+        <p>
+          This mode rewrites and replaces all detected content using the prompt specified below. 
+        </p>
+
+        <h4 class="section-label">Rewrite the web as...</h4>
+          <input type="text" id="customStyleText" placeholder="Enter your own style..." style="width:50%">
+        
+        <h4 class="section-label">Example Prompts</h4>
+          <button id="rewritePromptGangsterRap">gangster rap</button>
+          <button id="rewritePromptDonaldTrump">angry Donald Trump</button>
+
+      </div>
+
+      
+      <div class="mode-options" id="rewriteAdvancedOptions" style="display: none;">
+        
+        <p>
+          <b>Note: This is an advanced configuration option.</b> <br><br>
+          The standard "Rewrite and Replace" mode provides additional hidden prompts to the LLM to: produce rewritten content of a similar length to original content, exclude obvious AI generated text, etc.
+          This mode removes those providing you complete control to the prompt sent to the LLM alongside each item of detected content. 
+          All detected content is then replaced by its corresponding output from the LLM.
+        </p>
+
+        <h4 class="section-label">Enter prompt:</h4>
+          <input type="text" id="customStyleTextAdvanced" placeholder="Enter text here..." style="width:50%">
+              
+      </div>
+
+
+      <!-- Append Content -->
+      <div class="mode-options" id="appendOptions" style="display: none;">
+        <p>
+          This mode appends existing content with the LLM's response.
+        </p>
+
+          <label for="appendMode" class="section-label">Append Mode:</label><br><br>
+            <select id="appendMode" style="width: 50%; padding: 6px 10px; margin-bottom: 12px;">
+              <option value="">-- Select Mode --</option>
+              <option value="appendDino">Dino Detector</option>            
+              <option value="appendFactCheck">Fact Check</option>
+              <option value="appendLanguage">Translation</option>      
+              <option value="appendCustom">Custom (Advanced)</option>              
+            </select>
+
+            <!-- BLAH -->
+            <div class="append-options" id="appendDinoOptions" style="display: none;">          
+              <p> <b>Dino Detector:</b> Append a dinosaur emoji to any content that is detected to reference or discuss dinosaurs.</p>
+            </div>
+
+            <!-- BLAH -->
+            <div class="append-options" id="appendFactCheckOptions" style="display: none;">          
+              <p> <b>Fact Check:</b> Automatically highlight any content detected as being untrue and provide an explanation of why.</p>
+            </div>
+
+            <!-- BLAH -->
+            <div class="append-options" id="appendLanguageOptions" style="display: none;">                
+              <p> <b>Translation:</b> Appends a translation of any content.</p>
+
+              <h4 class="section-label">Translate the content into...</h4>
+              <input type="text" id="appendLanguageOptionTextBox" placeholder="Enter a language..." style="width:50%">        
+            </div>
+
+            <!-- BLAH -->
+            <div class="append-options" id="appendCustomOptions" style="display: none;">  
+              <p> <b>Custom (Advanced): This is an advanced configuration option.</b>
+                For each item of detected content on a webpage the LLM will be given.              
+                The LLM will be given: (a) each item of detected content on a webpage, and (b) any text you enter below as a prompt. 
+                Each item of detected content is then appended with the corresponding response from the LLM.   
+                <br><br>
+                Note: LLM's cannot respond with no response but there are times where no response is desired. 
+                To address this <code>12345abcde</code> is interpet as "no response" for custom appends.
+                Example: to replicate the behaviour of the Dino Detector mode you would enter the following text below: <code>Your task is to determine whether a piece of text discusses dinosaurs. If it does your response must be exactly: an emoji of a dinosaur. If it does not your response must be exactly: "12345abcde". You MUST only respond in this way. Does the following text discuss or refer to dinosaurs:</code>              
+              </p>                            
+                        
+                <h4 class="section-label">Enter prompt:</h4>
+              <input type="text" id="appendCustomOptionTextBox" placeholder="Enter text here..." style="width:50%">        
+            </div>
+                        
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Accordion: API Key -->
+  <div class="accordion">
+    <div class="accordion-header">
+      <span>LLM Setup</span>
+      <span id="llmOnlineActiveModelNotice" style="display:block;"> Online Model Active</span>      
+      <span id="llmOfflineActiveModelNotice" style="display:none;"> Offline Model Active</span>      
+      <span class="chevron rotate">▶</span>
+    </div>
+    <div class="accordion-content active">
+      
+      <!-- <input id="apiKey" type="password" placeholder="sk-..." style="width:300px"><br><br>
+      <input id="apiModel" type="text" value="gpt-3.5-turbo" placeholder="gpt-3.5-turbo" style="width:300px">
+       -->
+
+      <div class="input-row">
+        <label for="apiKey">OpenAI API Key</label>
+        <input id="apiKey" type="password" placeholder="sk-..." />
+      </div>
+
+      <div class="input-row">
+        <label for="apiModel">OpenAI Model</label>
+        <input id="apiModel" type="text" value="gpt-3.5-turbo" placeholder="gpt-3.5-turbo" />
+      </div>
+
+      <div class="tag-grid">
+        <label class="switch" id="localLLMSwitch"> 
+          Rewrite Using Local LLM 
+          <input type="checkbox" id="localLLMFlag">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <br>
+
+      <div class="input-row">
+        <label for="localModel">Ollama Model</label>
+        <input id="localModel" type="text" value="gemma3:1b" placeholder="Enter your own local model name..." />
+      </div>
+    
+    </div>
+  </div>
+
+
+
+  <!-- Accordion: URL Include/Exclude -->
+  <div class="accordion">
+    <div class="accordion-header">
+      <span>Pages to Exclude/Include</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="accordion-content">
+      <div class="info-box">
+        <p>
+          By default the tool targets every website. You can target specific websites to modify or exclude here.
+          Enter each target URL in the box below. Enter one URL pattern per line.
+          <br><br>
+          The <code>*</code> character acts as a wildcard.
+        </p>
+
+        <ul class="example-list">
+          <li>Example: <code>https://en.wikipedia.org/wiki/Greifswald</code> — targets only the Wikipedia page for Greifswald.</li>
+          <li>Example: <code>https://en.wikipedia.org/*</code> — targets all of Wikipedia.</li>
+        </ul>
+      </div>
+
+      <textarea id="excludedUrls" placeholder="Enter URLs..."></textarea>
+
+      <div class="tag-grid" style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <label class="switch" id="localLLMSwitch">
+          <input type="checkbox" id="excludeListedURLPatterns" checked>
+            Exclude listed URL patterns
+          <span class="slider"></span>
+        </label>
+
+        <label class="switch" id="localLLMSwitch">
+          <input type="checkbox" id="onlyRewriteListed">
+            Only modify listed URL patterns
+          <span class="slider"></span>
+        </label>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <!-- Accordion: Filtering Settings -->
+  <div class="accordion">
+    <div class="accordion-header">
+      <span>Content Filter Settings</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="accordion-content">
+      
+      <p>
+        By default the tool modifies all text it finds on a webpage. However, often there's a need to filter the amount of text content modified. 
+        <br><br>
+        Below are a number of filter tags. When a tag is enabled, all content on the page of its type is skipped for modification. 
+        <br><br>
+        Included are some preset options. Press the button to automatically set the content filter to this mode. 
+        <br><br>
+        NOTE: This is more of an advanced setup option. For less technical users I'd recommend sticking to the suggested presets and experimenting with customising those by toggling one tag at a time. 
+      </p>
+
+      <h4 class="section-label">Preset Examples (Press To Set)</h4>
+      <button id="basicPresetBtn">Modify Core Text Only</button>
+      <button id="advancedPresetBtn">Modify Everything</button><br><br>
+
+      <h4 class="section-label">General Tags To Skip</h4>
+      <div class="tag-grid">
+        <label class="switch">Script <input type="checkbox" id="scriptSkipTag" checked><span class="slider"></span></label>
+        <label class="switch">Style <input type="checkbox" id="styleSkipTag" checked><span class="slider"></span></label>
+        <label class="switch">NoScript <input type="checkbox" id="noscriptSkipTag" checked><span class="slider"></span></label>
+        <label class="switch">Nav <input type="checkbox" id="navSkipTag" checked><span class="slider"></span></label>
+        <label class="switch">Footer <input type="checkbox" id="footerSkipTag" checked><span class="slider"></span></label>
+        <label class="switch">Header <input type="checkbox" id="headerSkipTag" checked><span class="slider"></span></label>
+        <label class="switch">Aside <input type="checkbox" id="asideSkipTag" checked><span class="slider"></span></label>
+        <label class="switch">Iframe <input type="checkbox" id="iframeSkipTag" checked><span class="slider"></span></label>
+        <label class="switch">Input <input type="checkbox" id="inputSkipTag" checked><span class="slider"></span></label>
+        <label class="switch">Button <input type="checkbox" id="buttonSkipTag" checked><span class="slider"></span></label>
+      </div>
+
+      <h4 class="section-label">Paragraph Tags To Skip</h4>
+      <div class="tag-grid">
+        <label class="switch">Table <input type="checkbox" id="tableParagraphTag" checked><span class="slider"></span></label>
+        <label class="switch">Thead <input type="checkbox" id="theadParagraphTag" checked><span class="slider"></span></label>
+        <label class="switch">Tbody <input type="checkbox" id="tbodyParagraphTag" checked><span class="slider"></span></label>
+        <label class="switch">Tr <input type="checkbox" id="trParagraphTag" checked><span class="slider"></span></label>
+        <label class="switch">Td <input type="checkbox" id="tdParagraphTag" checked><span class="slider"></span></label>
+        <label class="switch">Ul <input type="checkbox" id="ulParagraphTag" checked><span class="slider"></span></label>
+        <label class="switch">Ol <input type="checkbox" id="olParagraphTag" checked><span class="slider"></span></label>
+        <label class="switch">Li <input type="checkbox" id="liParagraphTag" checked><span class="slider"></span></label>
+        <label class="switch">Form <input type="checkbox" id="formParagraphTag" checked><span class="slider"></span></label>
+        <label class="switch">Aside <input type="checkbox" id="asideParagraphTag" checked><span class="slider"></span></label>
+        <label class="switch">Nav <input type="checkbox" id="navParagraphTag" checked><span class="slider"></span></label>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Accordion: Platform Custom Formatting
+  <div class="accordion">
+    <div class="accordion-header">
+      <span>Platform Custom Formatting</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="accordion-content">
+      <label>
+        <input type="checkbox" id="xTwitterContentFlag" checked>
+        Select to enable custom content JS when X (Twitter) is loaded.
+      </label><br>
+      <label>
+        <input type="checkbox" id="slackContentFlag" checked>
+        Select to enable custom content JS when Slack is loaded.
+      </label><br>
+      <input id="slackSkipUsers" type="text" placeholder="Comma-separated usernames to skip" style="width:100%">
+    </div>
+  </div> -->
+
+
+  <div class="accordion">
+  
+    <div class="accordion-header">
+    <span>Website Specific Options</span>
+    <span class="chevron">▶</span>
+  </div>
+  
+  <div class="accordion-content">
+      <p>
+        Some websites have custom support for display and modification. Select a supported website from the list below to view its custom options.
+      </p>
+    
+    <!-- Platform selector -->
+    <label for="platformSelect" class="section-label">Select Website:</label><br><br>
+    <select id="platformSelect" style="width: 100%; padding: 6px 10px; margin-bottom: 12px;">
+      <option value="">-- Select Website --</option>
+      <option value="twitter">X (Twitter) (x.com)</option>
+      <option value="slack">Slack (app.slack.com)</option>
+    </select>
+
+    <!-- Twitter options -->
+    <div class="platform-options" id="twitterOptions" style="display: none;">
+      
+      <div class="tag-grid">
+        <label class="switch" id="localLLMSwitch"> 
+          Use custom display view 
+          <input type="checkbox" id="xTwitterContentFlag" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Slack options -->
+    <div class="platform-options" id="slackOptions" style="display: none;">
+      
+      <div class="tag-grid">
+        <label class="switch" id="localLLMSwitch"> 
+          Use custom display view 
+          <input type="checkbox" id="slackContentFlag" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+      
+      <!-- <label>
+        <input type="checkbox" id="slackContentFlag" checked>
+        Enable custom content JS when Slack is loaded.
+      </label>
+       -->
+      
+       <!-- <br> -->
+
+      <p>
+        If you want to skip specific users from being modified enter their username in the text box below. Example: <code>Almuth, Bob</code> — skips Almuth and Bob from being modified. 
+      </p>
+    
+      <input id="slackSkipUsers" type="text" placeholder="Enter a list of comma separated usernames to skip" style="width:600px;">
+    </div>
+
+  </div>
+</div>
+
+
+
+  <!-- Accordion: Debugging -->
+  <div class="accordion">
+    <div class="accordion-header">
+      <span>Developer Settings</span>
+      <span class="chevron">▶</span>
+    </div>
+
+    <div class="accordion-content">
+      <div class="tag-grid">
+        <label class="switch" id="localLLMSwitch"> 
+          Show modification banner
+          <input type="checkbox" id="showBanner" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <script src="options.js"></script>
+  <script src="tagOptions.js"></script>
+  <script src="styleOptions.js"></script>
+
+</body>
+</html>

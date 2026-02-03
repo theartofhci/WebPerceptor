@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "WebPerceptor",
+  "description": "WebPerceptor allows you to personalise your browsing experience on the web to create an LLM mediated view of the world wide web!",
+  "version": "1.0",
+  "icons": {
+    "16": "pig16.png",
+    "48": "pig48.png",
+    "128": "pig128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "pig16.png",
+      "48": "pig48.png"
+    },
+    "default_title": "Click me!",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["storage", "scripting", "activeTab"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "type": "module",
+      "all_frames": true,
+      "run_at": "document_start"
+    }
+  ],
+  "options_page": "options.html",
+  "web_accessible_resources": [
+    {
+      "resources": ["contents/generalContent.js", "contents/xTwitterContent.js", "contents/slackContent.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
