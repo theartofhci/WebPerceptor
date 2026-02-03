@@ -10,7 +10,7 @@ The author does not host, store, or distribute any third-party content and has n
  
 The tool does not provide any functionality for redistributing webpage content or AI-generated output to others.
  
-By using this software, you acknowledge and agree that *YOU ARE SOLELY RESPONSIBLE* for the following, and that these responsibilities are *NOT* shared by the author:
+By using this software, you acknowledge and agree that **YOU ARE SOLELY RESPONSIBLE** for the following, and that these responsibilities are *NOT* shared by the author:
  
 - Any content you generate, modify, or display
 - Ensuring you have the legal right to access, view, and modify the selected webpage content
@@ -19,8 +19,8 @@ By using this software, you acknowledge and agree that *YOU ARE SOLELY RESPONSIB
 - Not using the tool to infringe copyright, violate TOS, or unlawfully reproduce, distribute, or access copyrighted material
 - Ensuring you have the legal right to use, display, store, or distribute any AI-generated output
  
-The software is provided *"as is"* without warranty of any kind.
+The software is provided **"as is"** without warranty of any kind.
  
-The author is *not liable* for any damages, losses, or legal claims resulting from the use or misuse of this tool.
+The author is **not liable** for any damages, losses, or legal claims resulting from the use or misuse of this tool.
  
-You agree to *indemnify and hold the author harmless* from any claims arising from your use of the software including but not limited to claims arising from copyright infringement, breach of contract, misuse of the tool, or transmission of prohibited content.
+You agree to **indemnify and hold the author harmless** from any claims arising from your use of the software including but not limited to claims arising from copyright infringement, breach of contract, misuse of the tool, or transmission of prohibited content.
