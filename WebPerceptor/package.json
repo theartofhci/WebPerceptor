@@ -1,5 +1,5 @@
 {
-  "name": "chome-plugin",
+  "name": "WebPerceptor",
   "version": "1.0.0",
   "description": "",
   "main": "background.js",
