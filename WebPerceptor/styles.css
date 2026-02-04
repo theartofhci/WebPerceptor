@@ -198,7 +198,7 @@
 }
 
 .input-row label {
-  width: 120px; /* fixed label width for alignment */
+  width: 240px; /* fixed label width for alignment */
   font-size: 14px;
 }
 
