@@ -3,7 +3,6 @@ The WebPerceptor is a client-side Chromium plugin which, for any web page, ident
 
 The WebPerceptor is designed to enable the automatic, personalised, in-line, real-time remixing of web browsing, allowing users to browse a client-side, user-controlled "AI Mediated Web". 
 
-
 # Getting Started 
 This section is intended for developers and individuals with some experience using custom Chromium plugins and code. 
 
@@ -38,8 +37,13 @@ chrome://extensions/
 
 
 ### Cloud-Based LLM Setup
-Coming soon...
+1. Setup an account, API key, and credit with a supported cloud-based LLM provider
+2. In the LLM setup of the settings page enter the name of model to use 
+3. In the LLM setup of the settings page enter your API key to use
 
+WebPerceptor currently supports models by
+* OpenAI
+* xAI 
 
 ### Local LLM Setup
 Coming soon...
