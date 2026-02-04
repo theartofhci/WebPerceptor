@@ -38,10 +38,9 @@ chrome://extensions/
 
 ### Cloud-Based LLM Setup
 1. Setup an account, API key, and credit with a supported cloud-based LLM provider
-2. In the LLM setup of the settings page enter the name of model to use 
-3. In the LLM setup of the settings page enter your API key to use
+2. In the configurations options, enter the name of the model and API key to use 
 
-WebPerceptor currently supports models by
+WebPerceptor currently supports:
 * OpenAI
 * xAI 
 
