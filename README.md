@@ -56,6 +56,10 @@ Coming soon...
 An overview of the functionality and usage coming soon...
 
 
+# Contributing
+Add an overview of how you can contribute and help the project here...
+
+
 # Built With
 - HTML, CSS, and JavaScript
 - Ollama and Nodejs (local LLM support) 
