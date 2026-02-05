@@ -18,12 +18,13 @@ A Chromimum browser is required for use.
 To use the WebPercetor's cloud-based LLM functionality requires an account, API key, and credit with an LLM provider, e.g. OpenAI, xAI, etc. 
 
 To use the WebPerceptor's local LLM functionality requires:
-* ``npm``
-* ``ollama``
+* [``Nodejs``](https://nodejs.org/en)
+* [``npm``](https://www.npmjs.com/) (typically installed alongwith Nodejs) 
+* [``Ollama``](https://ollama.com/download/)
 
 ### Installation
 Steps 1-4 install download and setup the plugin for use within the broswer. Step 5 installs the node modules used to run the local LLM. 
-1. Clone the repo
+1. Clone the repo (or download and unzip it)
 ```sh
 git clone https://github.com/theartofhci/WebPerceptor.git
 ```
@@ -38,15 +39,29 @@ chrome://extensions/
 
 ### Cloud-Based LLM Setup
 1. Setup an account, API key, and credit with a supported cloud-based LLM provider
-2. In the configurations options, enter the name of the model and API key to use 
+2. In the configurations options, enter the **name of the model** you want to use in the ``Cloud-based LLM Model`` text box and your **API key** in the ``Cloud-based LLM API Key`` text box
+
 
 WebPerceptor currently supports:
 * OpenAI
 * xAI 
 
 ### Local LLM Setup
-Coming soon...
-
+**Installation:**
+1. Check you have [Ollama](https://ollama.com/download/) and a [model](https://ollama.com/search) installed 
+2. Check you have [Nodejs](https://nodejs.org/en) and [npm](https://www.npmjs.com/) installed
+3. If you have not done so already, in the ``main`` project folder run ``npm install``
+   
+**Running With a Local LLM:**
+1. In the configurations options, enable the ``Use Local LLM`` toggle and enter the **name of the Ollama model** you want to use in the ``Ollama Model`` text box 
+2. Open a new terminal / command line window and run Ollama using
+```sh
+ollama serve
+```
+3. Open a new terminal / command line window, navigate to the project directory, and run
+```sh
+node server.js
+```
 
 # Getting Started (Guided Walkthrough)
 Coming soon...
