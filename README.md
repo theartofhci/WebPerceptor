@@ -10,8 +10,6 @@ A set of non-technical setup instructions (and walkthrough video) is provided in
 
 Please read `license.md`, `legal_notice.md`, and `responsible_use.md` before using the WebPerceptor tool.
 
-A set of non-technical installation instructions (and walkthrough video) 
-
 ### Prerequisites
 A Chromimum browser is required for use. 
 
@@ -23,7 +21,7 @@ To use the WebPerceptor's local LLM functionality requires:
 * [``Ollama``](https://ollama.com/download/)
 
 ### Installation
-Steps 1-4 install download and setup the plugin for use within the broswer. Step 5 installs the node modules used to run the local LLM. 
+Steps 1-4 download and setup the plugin for use within the browser. Step 5 installs the node modules necessary to run WebPerceptor's local LLM mode. 
 1. Clone the repo (or download and unzip it)
 ```sh
 git clone https://github.com/theartofhci/WebPerceptor.git
@@ -72,11 +70,9 @@ An overview of the functionality and usage coming soon...
 
 
 # Contributing
-Add an overview of how you can contribute and help the project here...
+Coming soon...
 
 
 # Built With
 - HTML, CSS, and JavaScript
 - Ollama and Nodejs (local LLM support) 
-- Geese (soundtrack) 
-- Pizza and Irn-Bru ZERO
