@@ -1,6 +1,16 @@
 export async function runGeneric() {
 
-  console.log("general js");
+  const { apiModel } = await new Promise(resolve => {
+    chrome.storage.sync.get("apiModel", resolve);
+  });
+
+  const { localModel } = await new Promise(resolve => {
+    chrome.storage.sync.get("localModel", resolve);
+  });
+
+  const { localLLMFlag } = await new Promise(resolve => {
+    chrome.storage.sync.get("localLLMFlag", resolve);
+  });
 
   const { modeSelect } = await new Promise(resolve => {
     chrome.storage.sync.get("modeSelect", resolve);
@@ -222,11 +232,6 @@ export async function runGeneric() {
         } else {
           return;
         }
-        // Uncertainty is really causing havoc with the output so turn off until the prompt engineering is fixed
-        // if (text.slice(0, 5) === "uncer") {
-        //   el.innerText = el.innerText + " --- " + text;
-        //   el.style.color  = "blue";
-        // }
       }
 
     } else if (modeSelect === "rewrite" || modeSelect === "rewriteAdvanced") {
@@ -266,7 +271,13 @@ export async function runGeneric() {
 
         // Update progress banner
         rewrittenCount++;
-        banner.textContent = `The content of this page is being modified by the WebPerceptor plugin. Currently modified: ${rewrittenCount} text elements.`;
+
+        if (localLLMFlag) 
+        {
+          banner.textContent = `The content of this page is being modified by the WebPerceptor plugin (model: ${localModel}). Currently modified: ${rewrittenCount} text elements.`;
+        } else {
+          banner.textContent = `The content of this page is being modified by the WebPerceptor plugin (model: ${apiModel}). Currently modified: ${rewrittenCount} text elements.`;
+        }
 
         // Clean up rewriting flag
         b._rewriting = false;
@@ -283,8 +294,12 @@ export async function runGeneric() {
           );
 
           // Show completion in banner
-          banner.textContent =
-            `The content of this page has been modified by the WebPerceptor plugin. ${rewrittenCount} text elements were modified in ${durationSec}s.`;
+          if (localLLMFlag) 
+        {
+          banner.textContent = `The content of this page has been modified by the WebPerceptor plugin (model: ${localModel}). ${rewrittenCount} text elements were modified in ${durationSec}s.`;
+        } else {
+          banner.textContent = `The content of this page has been modified by the WebPerceptor plugin (model: ${apiModel}). ${rewrittenCount} text elements were modified in ${durationSec}s.`;
+        }
 
           // Reset so a later burst of dynamic content can be benchmarked separately.
           benchmarkStartTime = null;
@@ -327,6 +342,7 @@ export async function runGeneric() {
   chrome.storage.sync.get(["showBanner"], ({ showBanner }) => {
     banner.style.display = showBanner ? "block" : "none";
   });
+
 
   banner.textContent = `The content of this page is being modified by the WebPerceptor plugin.`;
   document.body.appendChild(banner);

@@ -58,7 +58,6 @@ export function handleMessage(message, sender, sendResponse) {
               systemPrompt = `${appendCustomOptionTextBox}`;
             }
             
-            // systemPrompt = `You are going to assess whether a piece of text is true or false. The first word you return MUST be either "true" or "false" or "uncertain". Only return either of those words as the first word of your output. After give a sentence summary of why the statement is true or false or to acknowledge you are uncertain. So the output format is: "true - this is true because example" OR "false - this is false because example". Read the following text respond "true" if the information included is truthful.`;
           
           } else if (modeSelect === "rewrite") {
             systemPrompt = `You MUST generate text between ${originalLength - 5} and ${originalLength + 5} characters long. Preserve all HTML tags exactly as in the input. Do not include titles or summary notes. Do not include any obvious AI generated text (e.g. "Okay, here's..."). Only rewrite the inner text. ${stylePhrase}`;
@@ -100,9 +99,6 @@ export function handleMessage(message, sender, sendResponse) {
               sendResponse({ error: "No API model set. Enter it in extension settings." });
               return;
             }        
-            
-            console.log("--------- here ---------");
-            console.log(apiModel.includes("grok"));
 
             let fetchLocation = "https://api.openai.com/v1/chat/completions";
 
