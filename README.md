@@ -1,3 +1,4 @@
+# Overview
 The WebPerceptor is a client-side Chromium plugin which, for any web page, identifies text content, relays this to a local or cloud-based LLM with a given user-defined prompt, then automatically replaces the identified text with the LLM response. By doing this in real-time and seamlessly presenting the results in-browser, the end result is that users perceive the modified page content as if it were the originally published content. 
 
 The WebPerceptor is designed to enable the automatic, personalised, in-line, real-time remixing of web browsing, allowing users to browse a client-side, user-controlled "AI Mediated Web". 
@@ -9,17 +10,17 @@ A set of non-technical setup instructions (and walkthrough video) is provided in
 
 Please read `license.md`, `legal_notice.md`, and `responsible_use.md` before using the WebPerceptor tool.
 
-### Prerequisites
+## Prerequisites
 A Chromimum browser is required for use. 
 
-To use the WebPercetor's cloud-based LLM functionality requires an account, API key, and credit with an LLM provider, e.g. OpenAI, xAI, etc. 
+To use the WebPerceptor's cloud-based LLM functionality requires an account, API key, and credit with an LLM provider, e.g. OpenAI, xAI, etc. 
 
 To use the WebPerceptor's local LLM functionality requires:
 * [``Nodejs``](https://nodejs.org/en)
 * [``npm``](https://www.npmjs.com/) (typically installed alongwith Nodejs) 
 * [``Ollama``](https://ollama.com/download/)
 
-### Installation
+## Installation
 Steps 1-4 download and setup the plugin for use within the browser. Step 5 installs the node modules necessary to run WebPerceptor's local LLM mode. 
 1. Clone the repo (or download and unzip it)
 ```sh
@@ -60,18 +61,32 @@ ollama serve
 node server.js
 ```
 
+## Model Recommendations
+TODO: Add text here outlining the choice of model. Performance varies depending on the model, hardware used, and amount of text being processed. Give a short example overview of benchmarking here. Give some example models. A note that models are changing all the time. Users are encouraged to experiment with different models to find the one best suited to their particular use case. For just testing out the toolkit we suggest blah.
+
+## Walkthrough of an Example Use:
+TODO: Walkthrough instructions for re-writing a Wikipedia article. Give some other suggested websites to try it on as well BBC News, X.com, Reddit, or well, any website.
+
+
 # Getting Started (Guided Walkthrough)
-Coming soon...
+Coming soon... This is just a video of the above Getting Started section - it could just be a sub section of the above just entitled "Video Walkthrough" 
 
 
-# Functionality and Usage 
-An overview of the functionality and usage coming soon...
-
-
-# Contributing
-Coming soon...
-
+# Functionality 
+An overview of the functionality of the toolkit coming soon...
 
 # Built With
 - HTML, CSS, and JavaScript
-- Ollama and Nodejs (local LLM support) 
+- Ollama and Nodejs (local LLM support)
+  
+# Contributing
+Coming soon...
+
+# Feedback and Suggestions
+Link to a qualtrics thing here so that if people want to give feedback or suggest a feature or report a bug they can do so (can also use GitHub to do this) 
+
+# Research Collaborations
+Coming soon... Information on how to contact us can go here 
+
+# Citation  
+How to cite the WebPercepor repository here. A link to any arxiv paper (depending on reviews what that is) and a citable reference here as well for that. 
