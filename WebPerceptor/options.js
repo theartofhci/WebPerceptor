@@ -366,23 +366,62 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- Load saved settings ---
   chrome.storage.sync.get(
     [
+      "modeSelect", "appendMode",
       "apiKey", "apiModel", "localModel", "style", "customStyleText", "customStyleTextAdvanced",
       "excludedUrls", "excludeListedURLPatterns", "onlyRewriteListed",
       "showBanner", "localLLMFlag", "xTwitterContentFlag", "slackContentFlag"
     ],
     (data) => {
+      // default to rewrite if no saved value
+      if (data.modeSelect !== undefined) {
+        modeSelect.value = data.modeSelect;
+      } else {
+        modeSelect.value = "rewrite";
+      }
+      modeSelect.dispatchEvent(new Event("change"));
+
+      if (data.appendMode) {
+        appendMode.value = data.appendMode;
+        appendMode.dispatchEvent(new Event("change"));
+      }
+
       if (data.apiKey) apiKeyInput.value = data.apiKey;
       if (data.apiModel) apiModelInput.value = data.apiModel;
       if (data.localModel) localModelInput.value = data.localModel;
-      if (data.style === "custom" && data.customStyleText) customText.value = data.customStyleText;
+      // if (data.style === "custom" && data.customStyleText) customText.value = data.customStyleText;
+      // --- Default rewrite prompt ---
+      const DEFAULT_REWRITE_PROMPT = "A pirate";
+      // use saved value if exists, otherwise use default
+      if (data.customStyleText !== undefined) {
+        customText.value = data.customStyleText;
+      } else {
+        customText.value = DEFAULT_REWRITE_PROMPT;
+      }
       if (data.customStyleTextAdvanced) customTextAdvanced.value = data.customStyleTextAdvanced;
-      excludedUrlsInput.value = Array.isArray(data.excludedUrls) ? data.excludedUrls.join("\n") : "";
-      // excludeListedURLPatternsCheckbox.checked = !!data.excludeListedURLPatterns;
-      // onlyRewriteCheckbox.checked = !!data.onlyRewriteListed;
+
+      excludedUrlsInput.value = Array.isArray(data.excludedUrls)
+        ? data.excludedUrls.join("\n")
+        : "";
+
       showBannerCheckbox.checked = data.showBanner !== undefined ? data.showBanner : true;
       localLLMCheckbox.checked = !!data.localLLMFlag;
       xTwitterContentCheckbox.checked = data.xTwitterContentFlag !== undefined ? data.xTwitterContentFlag : true;
       slackContentCheckbox.checked = data.slackContentFlag !== undefined ? data.slackContentFlag : true;
     }
+
+    // (data) => {
+    //   if (data.apiKey) apiKeyInput.value = data.apiKey;
+    //   if (data.apiModel) apiModelInput.value = data.apiModel;
+    //   if (data.localModel) localModelInput.value = data.localModel;
+    //   if (data.style === "custom" && data.customStyleText) customText.value = data.customStyleText;
+    //   if (data.customStyleTextAdvanced) customTextAdvanced.value = data.customStyleTextAdvanced;
+    //   excludedUrlsInput.value = Array.isArray(data.excludedUrls) ? data.excludedUrls.join("\n") : "";
+    //   // excludeListedURLPatternsCheckbox.checked = !!data.excludeListedURLPatterns;
+    //   // onlyRewriteCheckbox.checked = !!data.onlyRewriteListed;
+    //   showBannerCheckbox.checked = data.showBanner !== undefined ? data.showBanner : true;
+    //   localLLMCheckbox.checked = !!data.localLLMFlag;
+    //   xTwitterContentCheckbox.checked = data.xTwitterContentFlag !== undefined ? data.xTwitterContentFlag : true;
+    //   slackContentCheckbox.checked = data.slackContentFlag !== undefined ? data.slackContentFlag : true;
+    // }
   );
 });

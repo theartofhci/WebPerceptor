@@ -25,7 +25,7 @@
       <select id="modeSelect" style="width: 100%; padding: 6px 10px; margin-bottom: 12px;">
         <option value="">-- Select Mode --</option>
         <option value="append">Append</option>
-        <option value="rewrite">Rewrite and Replace</option>        
+        <option value="rewrite" selected>Rewrite and Replace</option>        
         <option value="rewriteAdvanced">Rewrite and Replace (Advanced)</option>        
       </select>
 
@@ -65,7 +65,7 @@
       <!-- Append Content -->
       <div class="mode-options" id="appendOptions" style="display: none;">
         <p>
-          This mode appends existing content with the LLM's response.
+          This mode sends detected content to the LLM with the prompt specified below. The LLM's response is then appended to the detected content.        
         </p>
 
           <label for="appendMode" class="section-label">Append Mode:</label><br><br>
@@ -86,9 +86,9 @@
             </div>
 
             <div class="append-options" id="appendLanguageOptions" style="display: none;">                
-              <p> <b>Translation:</b> Appends a translation of any content.</p>
+              <p> <b>Translation:</b> Append a translation of any content.</p>
 
-              <h4 class="section-label">Translate the content into...</h4>
+              <h4 class="section-label">Translate content into...</h4>
               <input type="text" id="appendLanguageOptionTextBox" placeholder="Enter a language..." style="width:50%">        
             </div>
 
