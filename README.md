@@ -90,7 +90,7 @@ During testing and demonstrations the following models are typically used:
 - Local: ``qwen2.5:0.5b``
 - Local: ``gemma3:1b``
 
-These are chosen as they (``gpt-3.5-turbo`` and ``qwen2.5:0.5b`` in particular) provide fast processing speeds on a 2025 Macbook Air across most webpages, providing a sense of the achievability of an AI mediated web in the near future.
+These have (``gpt-3.5-turbo`` and ``qwen2.5:0.5b`` in particular) fast processing speeds on a 2025 Macbook Air across most webpages, providing a sense of the achievability of an AI mediated web in the near future.
 
 As an example using ``gpt-3.5-turbo`` during early benchmark tests: 
 - All content on BBC News articles is modified and rendered in under 2.5 seconds 
