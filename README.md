@@ -10,7 +10,7 @@ There are many potential benefits to an AI mediated web including:
 - **Comprehension:** adapting content to specific reading level, a target text length, a particular style guide, to make personalized accommodations to create a more generally cognitively accessible web, etc 
 - **Engagement:** altering content in terms of tone, sentiment, emotional resonance, etc 
 - **Factuality:** providing in-line fact checking, highlight (and possible rewriting) bias, etc
-- **Representation:** incorporating different points of view where limited voices and perspectives are presented, etc 
+- **Representation:** incorporating different positions where limited voices and perspectives are presented, etc 
 - **Safety:** censoring triggers or otherwise adapting content to be safer for vulnerable groups, etc 
 - **Search:** highlighting pertinent information related to the overall search query or known topics of interest, or otherwise remove, diminish, filter or sort less relevant information, etc
 - **And more**
