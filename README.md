@@ -83,7 +83,21 @@ node server.js
 ```
 
 ## Model Recommendations
-TODO: Add text here outlining the choice of model. Performance varies depending on the model, hardware used, and amount of text being processed. Give a short example overview of benchmarking here. Give some example models. A note that models are changing all the time. Users are encouraged to experiment with different models to find the one best suited to their particular use case. For just testing out the toolkit we suggest blah.
+A user's choice of model will influence their experienced processing speeds during use as well as the quality of any generated output. At present, as the models and WebPerceptor continue to develop, there is a trade-off between processing speeds and generated content quality. Note: additional factors impacting processing speeds also include the user's hardware (when running a local model) as well as the amount of content being processed on a given page. 
+
+During testing and demonstrations the following models are typically used: 
+- Cloud-based (OpenAI): ``gpt-3.5-turbo``
+- Local: ``qwen2.5:0.5b``
+- Local: ``gemma3:1b``
+
+These are chosen as they (``gpt-3.5-turbo`` and ``qwen2.5:0.5b`` in particular) provide fast processing speeds on a 2025 Macbook Air across most webpages, providing a sense of the achievability of an AI mediated web in the near future.
+
+As an example using ``gpt-3.5-turbo`` during early benchmark tests: 
+- All content on BBC News articles is modified and rendered in under 2.5 seconds 
+- All content when scrolling on X.com is modified and rendered in under 2 seconds 
+- All content on Wikipedia articles ranging from 115 to 19,000 words is modified and rendered in 1-9 seconds 
+
+Please note a more comprehensive benchmarking test of the WebPerceptor is underway and future improvements to the efficiency of the content processing pipeline are planned. 
 
 ## Walkthrough of an Example Use:
 TODO: Walkthrough instructions for re-writing a Wikipedia article. Give some other suggested websites to try it on as well BBC News, X.com, Reddit, or well, any website.
@@ -118,7 +132,6 @@ WebPerceptor’s content filtering system allows users to specify which HTML tag
 ### Page Specific Functionality
 WebPerceptor’s architecture allows for the creation of site-specific processing approaches. These modules override the generic modification processing used, allowing for
 a pipeline tailoured to the specific structure and behaviour of the target website. E.g., custom logic can be to target site-specific features/components, content-filtering presets can be established, a site-specific text element identification can be implemented, etc
-
 
 
 # Built With
