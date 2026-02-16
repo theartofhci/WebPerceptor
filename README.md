@@ -3,6 +3,27 @@ The WebPerceptor is a client-side Chromium plugin which, for any web page, ident
 
 The WebPerceptor is designed to enable the automatic, personalised, in-line, real-time remixing of web browsing, allowing users to browse a client-side, user-controlled "AI Mediated Web". 
 
+_In short, and in less technical jargon, what if when you open a web page all of the text is just automatically sent to and rewritten by an LLM with some prompt and then automatically re-inserted into the web page as it loads? As the user all you've done is open a web page. But in reality the content has been completely rewritten by an LLM._
+
+### Envisioned Use Cases 
+There are many potential benefits to an AI mediated web including: 
+- **Comprehension:** adapting content to specific reading level, a target text length, a particular style guide, to make personalized accommodations to create a more generally cognitively accessible web, etc 
+- **Engagement:** altering content in terms of tone, sentiment, emotional resonance, etc 
+- **Factuality:** providing in-line fact checking, highlight (and possible rewriting) bias, etc
+- **Representation:** incorporating different points of view where limited voices and perspectives are presented, etc 
+- **Safety:** censoring triggers or otherwise adapting content to be safer for vulnerable groups, etc 
+- **Search:** highlighting pertinent information related to the overall search query or known topics of interest, or otherwise remove, diminish, filter or sort less relevant information, etc
+- **And more**
+
+However, there are many potential harms as well, e.g. 
+- **Bias:** rewriting content to add or be tailored towards a particular bias/viewpoint, etc 
+- **Censorship:** distressing content could be rewritten to be more positive or hidden from view entirely, historical information could be rewritten inaccurately, etc 
+- **Information Disorder:** political parties or malicious actors could control the wording/framing/content perceived by supportors, exacerbating echo chambers; re-writing material as an attack on the author or subjects character or credibility, etc
+- **Extremism:** amplifying narratives to widen the spread of false narratives, extremist views, and political viewpoints, dehumanizing groups or
+demographics when discussed by removing references or rewording sympathetic views, etc 
+- **And more**
+
+
 # Getting Started 
 This section is intended for developers and individuals with some experience using custom Chromium plugins and code. 
 
