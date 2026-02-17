@@ -29,7 +29,10 @@ This section is intended for developers and individuals with some experience usi
 
 A set of non-technical setup instructions (and walkthrough video) is provided in the **Getting Started (Guided Walkthrough)** section below. 
 
-Please read `license.md`, `legal_notice.md`, and `responsible_use.md` before using the WebPerceptor tool.
+> [!CAUTION]
+> - Read `license.md`, `legal_notice.md`, and `responsible_use.md` before using the WebPerceptor tool.
+> - Use of a cloud-based model requires API credits at your own financial costs 
+
 
 ## Prerequisites
 A Chromimum browser is required for use. 
@@ -107,6 +110,7 @@ TODO: Walkthrough instructions for re-writing a Wikipedia article. Give some oth
 Coming soon... This is just a video of the above Getting Started section - it could just be a sub section of the above just entitled "Video Walkthrough" 
 
 
+
 # Functionality 
 ### Cloud-Based/Local Model Support 
 WebPerceptor supports cloud-based and local LLM models. 
@@ -132,7 +136,6 @@ WebPerceptor’s content filtering system allows users to specify which HTML tag
 ### Page Specific Functionality
 WebPerceptor’s architecture allows for the creation of site-specific processing approaches. These modules override the generic modification processing used, allowing for
 a pipeline tailoured to the specific structure and behaviour of the target website. E.g., custom logic can be to target site-specific features/components, content-filtering presets can be established, a site-specific text element identification can be implemented, etc
-
 
 # Built With
 - HTML, CSS, and JavaScript
