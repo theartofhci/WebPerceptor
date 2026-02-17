@@ -35,7 +35,10 @@ A set of non-technical setup instructions (and walkthrough video) is provided in
 
 
 ## Prerequisites
-A Chromimum browser is required for use. 
+Todo: A Chromimum browser is required for use. -- revise this part 
+> [!NOTE]
+> Todo: Information here about the testing and readme instructions have been setup using Google Chrome. While it works on Firefox and other Chromium browsers there may be some differences
+
 
 To use the WebPerceptor's cloud-based LLM functionality requires an account, API key, and credit with an LLM provider, e.g. OpenAI, xAI, etc. 
 
@@ -46,7 +49,7 @@ To use the WebPerceptor's local LLM functionality requires:
 
 ## Installation
 Steps 1-4 download and setup the plugin for use within the browser. Step 5 installs the node modules necessary to run WebPerceptor's local LLM mode. 
-1. Clone the repo (or download and unzip it)
+1. Clone the repo (or download and unzip it). Step 6 pins the plugin to the browser toolbar for easy access to the settings page during use. 
 ```sh
 git clone https://github.com/theartofhci/WebPerceptor.git
 ```
@@ -57,6 +60,7 @@ chrome://extensions/
 3. Enable **Developer Mode**
 4. Click **"load unpacked"** and select the ``src`` folder (the main folder which contains the ``manifest.json`` and source code)
 5. *(Optional: If you want to use the plugin with a local LLM)* In the ``src`` project folder run ``npm install``
+6. *(Optional: For easy access during use)* To pin the plugin to your toolbar, click the Extensions icon (the puzzle piece icon in the top-right of the browser window). Click the Pin icon next to the WebPerceptor's name. 
 
 
 ### Cloud-Based LLM Setup
