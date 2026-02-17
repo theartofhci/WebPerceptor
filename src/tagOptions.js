@@ -67,10 +67,11 @@ function applyPreset(name) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("basicPresetBtn").addEventListener("click", () => {
-    applyPreset('basic');
-  });
-  document.getElementById("advancedPresetBtn").addEventListener("click", () => {
-    applyPreset('advanced');
-  });
+document.getElementById("basicPresetBtn")?.addEventListener("click", () => {
+  applyPreset("basic");
+});
+
+document.getElementById("advancedPresetBtn")?.addEventListener("click", () => {
+  applyPreset("advanced");
+});
 });

@@ -408,20 +408,5 @@ document.addEventListener("DOMContentLoaded", () => {
       xTwitterContentCheckbox.checked = data.xTwitterContentFlag !== undefined ? data.xTwitterContentFlag : true;
       slackContentCheckbox.checked = data.slackContentFlag !== undefined ? data.slackContentFlag : true;
     }
-
-    // (data) => {
-    //   if (data.apiKey) apiKeyInput.value = data.apiKey;
-    //   if (data.apiModel) apiModelInput.value = data.apiModel;
-    //   if (data.localModel) localModelInput.value = data.localModel;
-    //   if (data.style === "custom" && data.customStyleText) customText.value = data.customStyleText;
-    //   if (data.customStyleTextAdvanced) customTextAdvanced.value = data.customStyleTextAdvanced;
-    //   excludedUrlsInput.value = Array.isArray(data.excludedUrls) ? data.excludedUrls.join("\n") : "";
-    //   // excludeListedURLPatternsCheckbox.checked = !!data.excludeListedURLPatterns;
-    //   // onlyRewriteCheckbox.checked = !!data.onlyRewriteListed;
-    //   showBannerCheckbox.checked = data.showBanner !== undefined ? data.showBanner : true;
-    //   localLLMCheckbox.checked = !!data.localLLMFlag;
-    //   xTwitterContentCheckbox.checked = data.xTwitterContentFlag !== undefined ? data.xTwitterContentFlag : true;
-    //   slackContentCheckbox.checked = data.slackContentFlag !== undefined ? data.slackContentFlag : true;
-    // }
   );
 });
