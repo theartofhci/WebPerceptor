@@ -145,7 +145,9 @@ a pipeline tailoured to the specific structure and behaviour of the target websi
 Coming soon...
 
 # Feedback and Suggestions
-Link to a qualtrics thing here so that if people want to give feedback or suggest a feature or report a bug they can do so (can also use GitHub to do this) 
+If you would like to submit feedback, request a new feature or change, or report a bug or error you experienced: [click here](https://uofg.qualtrics.com/jfe/form/SV_782STWBUrHaBiXI)
+
+Alternatively, please feel free to use any of GitHub's built-in functionality to do this. 
 
 # Research Collaborations
 Coming soon... Information on how to contact us can go here 
