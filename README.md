@@ -150,7 +150,7 @@ If you would like to submit feedback, request a new feature or change, or report
 Alternatively, please feel free to use any of GitHub's built-in functionality to do this. 
 
 # Research Collaborations
-Coming soon... Information on how to contact us can go here 
+If you are interested in collaborating on future research projects feel free to send a message by [clicking here](https://uofg.qualtrics.com/jfe/form/SV_0p6lLI0GSzAi0nQ)
 
 # Citation  
 How to cite the WebPercepor repository here. A link to any arxiv paper (depending on reviews what that is) and a citable reference here as well for that. 
