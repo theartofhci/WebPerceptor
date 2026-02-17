@@ -55,8 +55,8 @@ git clone https://github.com/theartofhci/WebPerceptor.git
 chrome://extensions/
 ```
 3. Enable **Developer Mode**
-4. Click **"load unpacked"** and select the folder which contains the ``manifest.json``
-5. *(Optional: If you want to use the plugin with a local LLM)* In the ``main`` project folder run ``npm install``
+4. Click **"load unpacked"** and select the ``src`` folder (the main folder which contains the ``manifest.json`` and source code)
+5. *(Optional: If you want to use the plugin with a local LLM)* In the ``src`` project folder run ``npm install``
 
 
 ### Cloud-Based LLM Setup
