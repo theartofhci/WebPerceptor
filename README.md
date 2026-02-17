@@ -109,6 +109,7 @@ Please note a more comprehensive benchmarking test of the WebPerceptor is underw
 ## Walkthrough of an Example Use:
 TODO: Walkthrough instructions for re-writing a Wikipedia article. Give some other suggested websites to try it on as well BBC News, X.com, Reddit, or well, any website.
 
+Make sure there's a clear note here that you can access the configuration settings by pushing the pinned icon on the toolbar (see installation step 6) or through the list of installed extensions
 
 # Getting Started (Guided Walkthrough)
 Coming soon... This is just a video of the above Getting Started section - it could just be a sub section of the above just entitled "Video Walkthrough" 
