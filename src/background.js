@@ -7,3 +7,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   return true; // keep sendResponse valid for async
 });
 
+chrome.action.onClicked.addListener((tab) => {
+  chrome.runtime.openOptionsPage();
+});

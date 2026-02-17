@@ -13,9 +13,11 @@
       "16": "pig16.png",
       "48": "pig48.png"
     },
-    "default_title": "Click me!",
-    "default_popup": "popup.html"
+    "default_title": "Open Settings"
   },
+
+  "options_page": "options.html",
+
   "permissions": ["storage", "scripting", "activeTab"],
   "background": {
     "service_worker": "background.js",
@@ -30,7 +32,7 @@
       "run_at": "document_start"
     }
   ],
-  "options_page": "options.html",
+  
   "web_accessible_resources": [
     {
       "resources": ["contents/generalContent.js", "contents/xTwitterContent.js", "contents/slackContent.js"],
