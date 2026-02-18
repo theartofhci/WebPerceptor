@@ -209,8 +209,7 @@ export async function runGeneric() {
           el.innerText = el.innerText + " " + text;
         }
       }
-
-      // TODO: appendLanguage is buggy when using the HTML view and the other one rewrites the whole thing in colour
+    
       if (appendMode === "appendLanguage") {
         el.innerText = el.innerText + "\n\n" + text;
         el.style.color = "red";
