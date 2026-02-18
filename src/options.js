@@ -52,11 +52,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const platformSelect = document.getElementById("platformSelect");
   const twitterOptions = document.getElementById("twitterOptions");
 
-  const gangsterRapBtn = document.getElementById("rewritePromptGangsterRap");
-  const donaldTrumpBtn = document.getElementById("rewritePromptDonaldTrump");
+  const pirateBtn = document.getElementById("rewritePromptPirate");
+  const simplifiedEightYearOldBtn = document.getElementById("rewritePromptSimplifiedEightYearOld");
 
+  const angryBtn = document.getElementById("rewritePromptAngry");
 
+  const liberalBiasBtn = document.getElementById("rewritePromptLiberalBias");
+  const conservativeBiasBtn = document.getElementById("rewritePromptConservativeBias");
 
+  
   const noModificationNotice = document.getElementById("noModificationNotice");
   let noModificationNoticeChanges = false;
 
@@ -343,15 +347,33 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Preset buttons
-  gangsterRapBtn.addEventListener("click", () => {
-    customText.value = "gangster rap";
+  pirateBtn.addEventListener("click", () => {
+    customText.value = "a pirate";
     autoSave();
   });
 
-  donaldTrumpBtn.addEventListener("click", () => {
-    customText.value = "angry Donald Trump";
+  simplifiedEightYearOldBtn.addEventListener("click", () => {
+    customText.value = "text written for an 8 year old's reading level";
     autoSave();
   });
+
+  angryBtn.addEventListener("click", () => {
+    customText.value = "angry and sensational";
+    autoSave();
+  });
+
+
+  liberalBiasBtn.addEventListener("click", () => {
+    customText.value = "liberal political bias";
+    autoSave();
+  });
+
+  conservativeBiasBtn.addEventListener("click", () => {
+    customText.value = "conservative political bias";
+    autoSave();
+  });
+
+
 
   // --- Load saved settings ---
   chrome.storage.sync.get(
