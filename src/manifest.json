@@ -35,7 +35,7 @@
   
   "web_accessible_resources": [
     {
-      "resources": ["contents/generalContent.js", "contents/xTwitterContent.js", "contents/slackContent.js"],
+      "resources": ["contents/generalContent.js", "contents/xTwitterContent.js"],
       "matches": ["<all_urls>"]
     }
   ]

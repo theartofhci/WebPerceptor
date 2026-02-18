@@ -36,8 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const navParagraphTagCheckbox = document.getElementById("navParagraphTag");
 
   const xTwitterContentCheckbox = document.getElementById("xTwitterContentFlag");
-  const slackContentCheckbox = document.getElementById("slackContentFlag");
-  const skipSlackUsersInput = document.getElementById("slackSkipUsers");
 
   const modeSelect = document.getElementById("modeSelect");
   const rewriteOptions = document.getElementById("rewriteOptions");
@@ -53,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const platformSelect = document.getElementById("platformSelect");
   const twitterOptions = document.getElementById("twitterOptions");
-  const slackOptions = document.getElementById("slackOptions");
 
   const gangsterRapBtn = document.getElementById("rewritePromptGangsterRap");
   const donaldTrumpBtn = document.getElementById("rewritePromptDonaldTrump");
@@ -178,10 +175,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .map(u => u.trim())
       .filter(Boolean);
 
-    const slackSkipUsersList = skipSlackUsersInput.value
-      .split(",")
-      .map(u => u.trim())
-      .filter(Boolean);
 
     chrome.storage.sync.set({
       modeSelect: mode,
@@ -202,7 +195,6 @@ document.addEventListener("DOMContentLoaded", () => {
       showBanner: showBannerCheckbox.checked,
       localLLMFlag: localLLMCheckbox.checked,
       xTwitterContentFlag: xTwitterContentCheckbox.checked,
-      slackContentFlag: slackContentCheckbox.checked,
       scriptSkipTag: scriptSkipTagCheckbox.checked,
       styleSkipTag: styleSkipTagCheckbox.checked,
       noscriptSkipTag: noscriptSkipTagCheckbox.checked,
@@ -223,8 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
       liParagraphTag: liParagraphTagCheckbox.checked,
       formParagraphTag: formParagraphTagCheckbox.checked,
       asideParagraphTag: asideParagraphTagCheckbox.checked,
-      navParagraphTag: navParagraphTagCheckbox.checked,
-      slackSkipUsers: slackSkipUsersList
+      navParagraphTag: navParagraphTagCheckbox.checked
     });
   }
 
@@ -236,7 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Text inputs
-  [customText, customTextAdvanced, apiKeyInput, apiModelInput, localModelInput, excludedUrlsInput, appendCustomOptionTextBox, appendLanguageOptionTextBox, skipSlackUsersInput]
+  [customText, customTextAdvanced, apiKeyInput, apiModelInput, localModelInput, excludedUrlsInput, appendCustomOptionTextBox, appendLanguageOptionTextBox]
     .forEach(el => setupAutoSave(el));
 
   // Checkboxes
@@ -247,7 +238,7 @@ document.addEventListener("DOMContentLoaded", () => {
     inputSkipTagCheckbox, buttonSkipTagCheckbox, tableParagraphTagCheckbox, theadParagraphTagCheckbox,
     tbodyParagraphTagCheckbox, trParagraphTagCheckbox, tdParagraphTagCheckbox, ulParagraphTagCheckbox,
     olParagraphTagCheckbox, liParagraphTagCheckbox, formParagraphTagCheckbox, asideParagraphTagCheckbox,
-    navParagraphTagCheckbox, xTwitterContentCheckbox, slackContentCheckbox
+    navParagraphTagCheckbox, xTwitterContentCheckbox
   ].forEach(el => setupAutoSave(el, "change"));
 
   // Dropdowns
@@ -349,7 +340,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   platformSelect.addEventListener("change", () => {
     twitterOptions.style.display = platformSelect.value === "twitter" ? "block" : "none";
-    slackOptions.style.display = platformSelect.value === "slack" ? "block" : "none";
   });
 
   // Preset buttons
@@ -369,7 +359,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "modeSelect", "appendMode",
       "apiKey", "apiModel", "localModel", "style", "customStyleText", "customStyleTextAdvanced",
       "excludedUrls", "excludeListedURLPatterns", "onlyRewriteListed",
-      "showBanner", "localLLMFlag", "xTwitterContentFlag", "slackContentFlag"
+      "showBanner", "localLLMFlag", "xTwitterContentFlag"
     ],
     (data) => {
       // default to rewrite if no saved value
@@ -406,7 +396,6 @@ document.addEventListener("DOMContentLoaded", () => {
       showBannerCheckbox.checked = data.showBanner !== undefined ? data.showBanner : true;
       localLLMCheckbox.checked = !!data.localLLMFlag;
       xTwitterContentCheckbox.checked = data.xTwitterContentFlag !== undefined ? data.xTwitterContentFlag : true;
-      slackContentCheckbox.checked = data.slackContentFlag !== undefined ? data.slackContentFlag : true;
     }
   );
 });
