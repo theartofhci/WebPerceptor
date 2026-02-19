@@ -1,10 +1,10 @@
 [Overview](#Overview)
-[Getting Started](#Getting Started)
+[Getting Started](#Getting-Started)
 [Functionality](#Functionality)
-[Built With](#Built With)
+[Built With](#Built-With)
 [Contributing](#Contributing)
-[Feedback and Suggestions](#Feedback and Suggestions)
-[Research Collaborations](#Research Collaborations)
+[Feedback and Suggestions](#Feedback-and-Suggestions)
+[Research Collaborations](#Research-Collaborations)
 [Citaton](#Citation)
 
 # Overview
