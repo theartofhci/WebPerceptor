@@ -157,6 +157,8 @@ If you would like to submit feedback, request a new feature or change, or report
 Alternatively, please feel free to use any of GitHub's built-in functionality to do this. 
 
 # Research Collaborations
+We are actively interested in collaborations with industry, academia, and more. 
+
 If you are interested in collaborating on future research projects feel free to send a message by [clicking here](https://uofg.qualtrics.com/jfe/form/SV_0p6lLI0GSzAi0nQ)
 
 # Citation  
