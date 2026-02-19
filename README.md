@@ -1,11 +1,4 @@
-[Overview](#Overview)
-[Getting Started](#Getting-Started)
-[Functionality](#Functionality)
-[Built With](#Built-With)
-[Contributing](#Contributing)
-[Feedback and Suggestions](#Feedback-and-Suggestions)
-[Research Collaborations](#Research-Collaborations)
-[Citaton](#Citation)
+[**Overview**](#Overview) | [**Getting Started**](#Getting-Started) | [**Functionality**](#Functionality) | [**Built With**](#Built-With) | [**Contributing**](#Contributing) | [**Feedback and Suggestions**](#Feedback-and-Suggestions) | [**Research Collaborations**](#Research-Collaborations) | [**Citation**](#Citation)
 
 # Overview
 The WebPerceptor is a client-side Chromium plugin which, for any web page, identifies text content, relays this to a local or cloud-based LLM with a given user-defined prompt, then automatically replaces the identified text with the LLM response. By doing this in real-time and seamlessly presenting the results in-browser, the end result is that users perceive the modified page content as if it were the originally published content. 
