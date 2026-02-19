@@ -35,10 +35,10 @@ A set of non-technical setup instructions (and walkthrough video) is provided in
 
 
 ## Prerequisites
-Todo: A Chromimum browser is required for use. -- revise this part 
+WebPerceptor is compatible with any Chromium browser.
 > [!NOTE]
-> Todo: Information here about the testing and readme instructions have been setup using Google Chrome. While it works on Firefox and other Chromium browsers there may be some differences
-
+> - Testing and development has been conducted primarily using Google Chrome.
+> - All setup instructions are written for installation on Google Chrome. While other Chromium browsers are supported there may be some differences with installation and unexpected behaviours during use. 
 
 To use the WebPerceptor's cloud-based LLM functionality requires an account, API key, and credit with an LLM provider, e.g. OpenAI, xAI, etc. 
 
