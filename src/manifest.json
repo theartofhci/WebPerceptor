@@ -4,14 +4,14 @@
   "description": "WebPerceptor allows you to personalise your browsing experience on the web to create an LLM mediated view of the world wide web!",
   "version": "1.0",
   "icons": {
-    "16": "pig16.png",
-    "48": "pig48.png",
-    "128": "pig128.png"
+    "16": "images/logo16.png",
+    "48": "images/logo48.png",
+    "128": "images/logo128.png"
   },
   "action": {
     "default_icon": {
-      "16": "pig16.png",
-      "48": "pig48.png"
+      "16": "images/logo16.png",
+      "48": "images/logo48.png"
     },
     "default_title": "Open Settings"
   },
