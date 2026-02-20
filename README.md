@@ -25,6 +25,9 @@ However, there are many potential harms as well, e.g.
 demographics when discussed by removing references or rewording sympathetic views, etc 
 - **And more**
 
+Here's an example of rewriting BBC News headlines as a pirate:
+
+<img src="demo/test.gif" width="600" alt="DEMO GIF showing politics headlines on BBC News being rewritten by an LLM to be pirate themed"/>
 
 # Getting Started 
 This section is intended for developers and individuals with some experience using custom Chromium plugins and code. 
