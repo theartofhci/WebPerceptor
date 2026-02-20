@@ -157,7 +157,7 @@ a pipeline tailoured to the specific structure and behaviour of the target websi
 - Ollama and Nodejs (local LLM support)
   
 # Contributing
-Coming soon...
+More information coming soon.
 
 # Feedback and Suggestions
 If you would like to submit feedback, request a new feature or change, or report a bug or error you experienced: [click here](https://uofg.qualtrics.com/jfe/form/SV_782STWBUrHaBiXI)
@@ -170,4 +170,4 @@ We are actively interested in collaborations with industry, academia, and more.
 If you are interested in collaborating on future research projects feel free to send a message by [clicking here](https://uofg.qualtrics.com/jfe/form/SV_0p6lLI0GSzAi0nQ)
 
 # Citation  
-How to cite the WebPercepor repository here. A link to any arxiv paper (depending on reviews what that is) and a citable reference here as well for that. 
+More information coming soon. 
