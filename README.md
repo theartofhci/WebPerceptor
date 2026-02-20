@@ -72,7 +72,6 @@ chrome://extensions/
 1. Setup an account, API key, and credit with a supported cloud-based LLM provider
 2. In the configurations options, enter the **name of the model** you want to use in the ``Cloud-based LLM Model`` text box and your **API key** in the ``Cloud-based LLM API Key`` text box
 
-
 WebPerceptor currently supports:
 * OpenAI
 * xAI 
@@ -112,13 +111,19 @@ As an example using ``gpt-3.5-turbo`` during early benchmark tests:
 Please note a more comprehensive benchmarking test of the WebPerceptor is underway and future improvements to the efficiency of the content processing pipeline are planned. 
 
 ## Walkthrough of an Example Use:
-TODO: Walkthrough instructions for re-writing a Wikipedia article. Give some other suggested websites to try it on as well BBC News, X.com, Reddit, or well, any website.
+1. Install and setup the plugin following the instructions above
+2. Open the configuration settings by either pressing the pinned icon or through the browser's manage extensions menu
 
-Make sure there's a clear note here that you can access the configuration settings by pushing the pinned icon on the toolbar (see installation step 6) or through the list of installed extensions
+By default, on first time use, the plugin is set up to rewrite and replace all detected text content as if it was rewritten by a pirate. 
 
-# Getting Started (Guided Walkthrough)
-Coming soon... This is just a video of the above Getting Started section - it could just be a sub section of the above just entitled "Video Walkthrough" 
+3. Enter the details for your chosen model (either cloud-based or local) in the LLM Setup section of the settings page
+4. Open a web page to rewrite, e.g. a BBC News article, a Wikipedia page, or any website you are familiar with
 
+To familiarise yourself with the capabilities of the plugin, read the [Functionality](#Functionality) section below and try experimenting with the following features: 
+- Compare speeds rewriting text using a cloud-based and local model
+- In Modification Setup enable Append mode and select a mode to try 
+- Use Pages to Exclude/Include to setup the WebPerceptor to only rewrite Wikipedia pages 
+- Use Content Filter Settings to only modify paragraph text (Modify Core Text Only)
 
 
 # Functionality 
