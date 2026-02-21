@@ -348,7 +348,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Preset buttons
   pirateBtn.addEventListener("click", () => {
-    customText.value = "a pirate";
+    customText.value = "if written by a pirate";
     autoSave();
   });
 
@@ -402,7 +402,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (data.localModel) localModelInput.value = data.localModel;
       // if (data.style === "custom" && data.customStyleText) customText.value = data.customStyleText;
       // --- Default rewrite prompt ---
-      const DEFAULT_REWRITE_PROMPT = "A pirate";
+      const DEFAULT_REWRITE_PROMPT = "if written by a pirate";
       // use saved value if exists, otherwise use default
       if (data.customStyleText !== undefined) {
         customText.value = data.customStyleText;
