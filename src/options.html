@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WebPerceptor Settings</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+  <div class="accordion">
+  
+    <div class="accordion-header">
+      <span>Modification Setup</span>
+          <span id="noModificationNotice" style="display:block;"> No Modification</span>
+          <span id="rewriteAndReplaceNotice" style="display:none;">Rewrite & Replace</span>
+          <span id="appendNotice" style="display:none;">Append</span>  
+      <span class="chevron rotate">▶</span>
+    </div>
+    
+    <div class="accordion-content active">
+
+      
+      <!-- Content Mode Selection -->
+      <select id="modeSelect" style="width: 100%; padding: 6px 10px; margin-bottom: 12px;">
+        <option value="none">No Modification</option>
+        <option value="append">Append</option>
+        <option value="rewrite" selected>Rewrite and Replace</option>        
+        <option value="rewriteAdvanced">Rewrite and Replace (Advanced)</option>        
+      </select>
+
+
+      <!-- Rewrite and Replace Content -->
+      <div class="mode-options" id="rewriteOptions" style="display: none;">
+        
+        <p>
+          This mode rewrites and replaces all detected content using the prompt specified below. 
+        </p>
+
+        <h4 class="section-label">Rewrite the web as...</h4>
+          <input type="text" id="customStyleText" placeholder="Enter your own style..." style="width:75%">
+        
+        <h4 class="section-label">Example Prompts</h4>
+          <button id="rewritePromptPirate">a pirate</button>
+          <button id="rewritePromptSimplifiedEightYearOld">for 8 year olds</button>
+
+          <button id="rewritePromptAngry">angry and sensational</button>
+
+          <button id="rewritePromptLiberalBias">liberal bias</button>
+          <button id="rewritePromptConservativeBias">conservative bias</button>
+
+      </div>
+
+      
+      <div class="mode-options" id="rewriteAdvancedOptions" style="display: none;">
+        
+        <p>
+          <b>Note: This is an advanced configuration option.</b> <br><br>
+          The standard "Rewrite and Replace" mode provides additional hidden prompts to the LLM to: produce rewritten content of a similar length to original content, exclude obvious AI generated text, etc.
+          This mode removes those providing you complete control to the prompt sent to the LLM alongside each item of detected content. 
+          All detected content is then replaced by its corresponding output from the LLM.
+        </p>
+
+        <h4 class="section-label">Enter prompt:</h4>
+          <input type="text" id="customStyleTextAdvanced" placeholder="Enter text here..." style="width:50%">
+              
+      </div>
+
+
+      <!-- Append Content -->
+      <div class="mode-options" id="appendOptions" style="display: none;">
+        <p>
+          This mode sends detected content to the LLM with the prompt specified below. The LLM's response is then appended to the detected content.        
+        </p>
+
+          <label for="appendMode" class="section-label">Append Mode:</label><br><br>
+            <select id="appendMode" style="width: 50%; padding: 6px 10px; margin-bottom: 12px;">
+              <option value="appendNone">-- Select Mode --</option>
+              <option value="appendDino">Dino Detector</option>            
+              <option value="appendFactCheck">Fact Check</option>
+              <option value="appendLanguage">Translation</option>      
+              <option value="appendCustom">Custom (Advanced)</option>              
+            </select>
+
+            <div class="append-options" id="appendDinoOptions" style="display: none;">          
+              <p> <b>Dino Detector:</b> Append a dinosaur emoji to any content that is detected to reference or discuss dinosaurs.</p>
+            </div>
+
+            <div class="append-options" id="appendFactCheckOptions" style="display: none;">          
+              <p> <b>Fact Check:</b> Automatically highlight any content detected as being untrue and provide an explanation of why.</p>
+            </div>
+
+            <div class="append-options" id="appendLanguageOptions" style="display: none;">                
+              <p> <b>Translation:</b> Append a translation of any content.</p>
+
+              <h4 class="section-label">Translate content into...</h4>
+              <input type="text" id="appendLanguageOptionTextBox" placeholder="Enter a language..." style="width:50%">        
+            </div>
+
+            <div class="append-options" id="appendCustomOptions" style="display: none;">  
+              <p> <b>Custom (Advanced): This is an advanced configuration option.</b>
+                For each item of detected content on a webpage the LLM will be given.              
+                The LLM will be given: (a) each item of detected content on a webpage, and (b) any text you enter below as a prompt. 
+                Each item of detected content is then appended with the corresponding response from the LLM.   
+                <br><br>
+                Note: LLM's cannot respond with no response but there are times where no response is desired. 
+                To address this <code>12345abcde</code> is interpet as "no response" for custom appends.
+                Example: to replicate the behaviour of the Dino Detector mode you would enter the following text below: <code>Your task is to determine whether a piece of text discusses dinosaurs. If it does your response must be exactly: an emoji of a dinosaur. If it does not your response must be exactly: "12345abcde". You MUST only respond in this way. Does the following text discuss or refer to dinosaurs:</code>              
+              </p>                            
+                        
+                <h4 class="section-label">Enter prompt:</h4>
+              <input type="text" id="appendCustomOptionTextBox" placeholder="Enter text here..." style="width:50%">        
+            </div>
+                        
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Accordion: API Key -->
+  <div class="accordion">
+    <div class="accordion-header">
+      <span>LLM Setup</span>
+      <span id="llmOnlineActiveModelNotice" style="display:block;"> Online Model Active</span>      
+      <span id="llmOfflineActiveModelNotice" style="display:none;"> Offline Model Active</span>      
+      <span class="chevron rotate">▶</span>
+    </div>
+    <div class="accordion-content active">
+      
+
+      <div class="input-row">
+        <label for="apiKey">Cloud-based LLM API Key</label>
+        <input id="apiKey" type="password" placeholder="sk-..." />
+      </div>
+
+      <div class="input-row">
+        <label for="apiModel">Cloud-based LLM Model</label>
+        <input id="apiModel" type="text" value="gpt-3.5-turbo" placeholder="gpt-3.5-turbo" />
+      </div>
+
+      <div class="tag-grid">
+        <label class="switch" id="localLLMSwitch"> 
+           Use Local LLM 
+          <input type="checkbox" id="localLLMFlag">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <br>
+
+      <div class="input-row">
+        <label for="localModel">Ollama Model</label>
+        <input id="localModel" type="text" value="gemma3:1b" placeholder="Enter your own local model name..." />
+      </div>
+    
+    </div>
+  </div>
+
+
+
+  <!-- Accordion: URL Include/Exclude -->
+  <div class="accordion">
+    <div class="accordion-header">
+      <span>Pages to Exclude/Include</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="accordion-content">
+      <div class="info-box">
+        <p>
+          By default the tool targets every website. You can target specific websites to modify or exclude here.
+          Enter each target URL in the box below. Enter one URL pattern per line.
+          <br><br>
+          The <code>*</code> character acts as a wildcard.
+        </p>
+
+        <ul class="example-list">
+          <li>Example: <code>https://en.wikipedia.org/wiki/Greifswald</code> — targets only the Wikipedia page for Greifswald.</li>
+          <li>Example: <code>https://en.wikipedia.org/*</code> — targets all of Wikipedia.</li>
+        </ul>
+      </div>
+
+      <textarea id="excludedUrls" placeholder="Enter URLs..."></textarea>
+
+      <div class="tag-grid" style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <label class="switch" id="localLLMSwitch">
+          <input type="checkbox" id="excludeListedURLPatterns" checked>
+            Exclude listed URL patterns
+          <span class="slider"></span>
+        </label>
+
+        <label class="switch" id="localLLMSwitch">
+          <input type="checkbox" id="onlyRewriteListed">
+            Only modify listed URL patterns
+          <span class="slider"></span>
+        </label>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <!-- Accordion: Filtering Settings -->
+  <div class="accordion">
+    <div class="accordion-header">
+      <span>Content Filter Settings</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="accordion-content">
+      
+      <p>
+        By default the tool modifies all text it finds on a webpage. However, often there's a need to filter the amount of text content modified. 
+        <br><br>
+        Below are a number of filter tags. When a tag is enabled, all content on the page of its type is skipped for modification. 
+        <br><br>
+        Included are some preset options. Press the button to automatically set the content filter to this mode. 
+        <br><br>
+        NOTE: This is more of an advanced setup option. For less technical users I'd recommend sticking to the suggested presets and experimenting with customising those by toggling one tag at a time. 
+      </p>
+
+      <h4 class="section-label">Preset Examples (Press To Set)</h4>
+      <button id="basicPresetBtn">Modify Core Text Only</button>
+      <button id="advancedPresetBtn">Modify Everything</button><br><br>
+
+      <h4 class="section-label">General Tags To Skip</h4>
+      <div class="tag-grid">
+        <label class="switch">Script <input type="checkbox" id="scriptSkipTag" checked><span class="slider"></span></label>
+        <label class="switch">Style <input type="checkbox" id="styleSkipTag" checked><span class="slider"></span></label>
+        <label class="switch">NoScript <input type="checkbox" id="noscriptSkipTag" checked><span class="slider"></span></label>
+        <label class="switch">Nav <input type="checkbox" id="navSkipTag"><span class="slider"></span></label>
+        <label class="switch">Footer <input type="checkbox" id="footerSkipTag"><span class="slider"></span></label>
+        <label class="switch">Header <input type="checkbox" id="headerSkipTag"><span class="slider"></span></label>
+        <label class="switch">Aside <input type="checkbox" id="asideSkipTag"><span class="slider"></span></label>
+        <label class="switch">Iframe <input type="checkbox" id="iframeSkipTag"><span class="slider"></span></label>
+        <label class="switch">Input <input type="checkbox" id="inputSkipTag"><span class="slider"></span></label>
+        <label class="switch">Button <input type="checkbox" id="buttonSkipTag"><span class="slider"></span></label>
+      </div>
+
+      <h4 class="section-label">Paragraph Tags To Skip</h4>
+      <div class="tag-grid">
+        <label class="switch">Table <input type="checkbox" id="tableParagraphTag"><span class="slider"></span></label>
+        <label class="switch">Thead <input type="checkbox" id="theadParagraphTag"><span class="slider"></span></label>
+        <label class="switch">Tbody <input type="checkbox" id="tbodyParagraphTag"><span class="slider"></span></label>
+        <label class="switch">Tr <input type="checkbox" id="trParagraphTag"><span class="slider"></span></label>
+        <label class="switch">Td <input type="checkbox" id="tdParagraphTag"><span class="slider"></span></label>
+        <label class="switch">Ul <input type="checkbox" id="ulParagraphTag"><span class="slider"></span></label>
+        <label class="switch">Ol <input type="checkbox" id="olParagraphTag"><span class="slider"></span></label>
+        <label class="switch">Li <input type="checkbox" id="liParagraphTag"><span class="slider"></span></label>
+        <label class="switch">Form <input type="checkbox" id="formParagraphTag"><span class="slider"></span></label>
+        <label class="switch">Aside <input type="checkbox" id="asideParagraphTag"><span class="slider"></span></label>
+        <label class="switch">Nav <input type="checkbox" id="navParagraphTag"><span class="slider"></span></label>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="accordion">
+  
+    <div class="accordion-header">
+    <span>Website Specific Options</span>
+    <span class="chevron">▶</span>
+  </div>
+  
+  <div class="accordion-content">
+      <p>
+        Some websites have custom support for display and modification. Select a supported website from the list below to view its custom options.
+      </p>
+    
+    <!-- Platform selector -->
+    <label for="platformSelect" class="section-label">Select Website:</label><br><br>
+    <select id="platformSelect" style="width: 100%; padding: 6px 10px; margin-bottom: 12px;">
+      <option value="">-- Select Website --</option>
+      <option value="twitter">X (Twitter) (x.com)</option>
+    </select>
+
+    <!-- Twitter options -->
+    <div class="platform-options" id="twitterOptions" style="display: none;">
+      
+      <div class="tag-grid">
+        <label class="switch" id="localLLMSwitch"> 
+          Use custom display view 
+          <input type="checkbox" id="xTwitterContentFlag" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+  <!-- Accordion: Debugging -->
+  <div class="accordion">
+    <div class="accordion-header">
+      <span>Developer Settings</span>
+      <span class="chevron">▶</span>
+    </div>
+
+    <div class="accordion-content">
+      <div class="tag-grid">
+        <label class="switch" id="localLLMSwitch"> 
+          Show modification banner
+          <input type="checkbox" id="showBanner" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <script src="options.js"></script>
+  <script src="tagOptions.js"></script>
+  <script src="styleOptions.js"></script>
+
+</body>
+</html>
