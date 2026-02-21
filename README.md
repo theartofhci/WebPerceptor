@@ -110,7 +110,7 @@ As an example using ``gpt-3.5-turbo`` during early benchmark tests:
 
 Please note a more comprehensive benchmarking test of the WebPerceptor is underway and future improvements to the efficiency of the content processing pipeline are planned. 
 
-## Walkthrough of an Example Use:
+## Walkthrough of Example Use:
 1. Install and setup the plugin following the instructions above
 2. Open the configuration settings by either pressing the pinned icon or through the browser's manage extensions menu
 
