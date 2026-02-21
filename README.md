@@ -1,5 +1,7 @@
 [**Overview**](#Overview) | [**Getting Started**](#Getting-Started) | [**Functionality**](#Functionality) | [**Built With**](#Built-With) | [**Contributing**](#Contributing) | [**Feedback and Suggestions**](#Feedback-and-Suggestions) | [**Research Collaborations**](#Research-Collaborations) | [**Citation**](#Citation)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18724545.svg)](https://doi.org/10.5281/zenodo.18724545)
+
 # Overview
 The WebPerceptor is a client-side Chromium plugin which, for any web page, identifies text content, relays this to a local or cloud-based LLM with a given user-defined prompt, then automatically replaces the identified text with the LLM response. By doing this in real-time and seamlessly presenting the results in-browser, the end result is that users perceive the modified page content as if it were the originally published content. 
 
@@ -169,4 +171,16 @@ We are actively interested in collaborations with industry, academia, and more.
 If you are interested in collaborating on future research projects feel free to send a message by [clicking here](https://uofg.qualtrics.com/jfe/form/SV_0p6lLI0GSzAi0nQ)
 
 # Citation  
-More information coming soon. 
+To cite the latest release of the WebPerceptor toolkit please use the following: 
+
+```bibtex
+@software{webperceptor_v1_0_0,
+  author = {O'Hagan, Joseph},
+  title = {WebPerceptor Release v1.0.0},
+  version = {v1.0.0},
+  publisher = {Zenodo},
+  doi = {10.5281/zenodo.18724545},
+  url = {https://github.com/theartofhci/WebPerceptor/releases/tag/v1.0.0},
+  year = {2026}
+}
+```
