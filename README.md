@@ -184,3 +184,7 @@ To cite the latest release of the WebPerceptor toolkit please use the following:
   year = {2026}
 }
 ```
+
+# Featured Research
+WebPerceptor has been used in the following research publications 
+- [WebPerceptor: An Open Source Chromium Plugin for Real-Time LLM-Based In-Line, In-Browser Re-Writing of Website Content](https://drive.google.com/file/d/1L6Y5OA_Hc6eQudyOzDxLGGEg-IP_XUlV/view?usp=sharing)
