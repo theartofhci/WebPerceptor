@@ -1,4 +1,4 @@
-[**Overview**](#Overview) | [**Getting Started**](#Getting-Started) | [**Functionality**](#Functionality) | [**Built With**](#Built-With) | [**Contributing**](#Contributing) | [**Feedback and Suggestions**](#Feedback-and-Suggestions) | [**Research Collaborations**](#Research-Collaborations) | [**Citation**](#Citation)
+[**Overview**](#Overview) | [**Getting Started**](#Getting-Started) | [**Functionality**](#Functionality) | [**Built With**](#Built-With) | [**Contributing**](#Contributing) | [**Feedback and Suggestions**](#Feedback-and-Suggestions) | [**Research Collaborations**](#Research-Collaborations) | [**Citation**](#Citation) | [**Featured Research**](#Featured-Research)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18724545.svg)](https://doi.org/10.5281/zenodo.18724545)
 
@@ -186,5 +186,5 @@ To cite the latest release of the WebPerceptor toolkit please use the following:
 ```
 
 # Featured Research
-WebPerceptor has been used in the following research publications 
+WebPerceptor has been used in the following research publications:
 - [WebPerceptor: An Open Source Chromium Plugin for Real-Time LLM-Based In-Line, In-Browser Re-Writing of Website Content](https://drive.google.com/file/d/1L6Y5OA_Hc6eQudyOzDxLGGEg-IP_XUlV/view?usp=sharing)
