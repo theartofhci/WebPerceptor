@@ -82,7 +82,7 @@ WebPerceptor currently supports:
 **Installation:**
 1. Check you have [Ollama](https://ollama.com/download/) and a [model](https://ollama.com/search) installed 
 2. Check you have [Nodejs](https://nodejs.org/en) and [npm](https://www.npmjs.com/) installed
-3. If you have not done so already, in the ``main`` project folder run ``npm install``
+3. If you have not done so already, in the ``src`` project folder run ``npm install``
    
 **Running With a Local LLM:**
 1. In the configurations options, enable the ``Use Local LLM`` toggle and enter the **name of the Ollama model** you want to use in the ``Ollama Model`` text box 
